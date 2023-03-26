@@ -10,25 +10,25 @@ import static org.junit.jupiter.api.Assertions.assertThrowsExactly;
 public class TimestampTests {
   @DisplayName("Ловим некорректный ввод часов <0")
   @Test
-  public void negativeHours(){
+  public void negativeHours() {
     assertThrowsExactly(IllegalArgumentException.class, () -> new Timestamp(-1, 1));
   }
 
   @DisplayName("Ловим некорректный ввод часов >23")
   @Test
-  public void incorrectHours(){
+  public void incorrectHours() {
     assertThrowsExactly(IllegalArgumentException.class, () -> new Timestamp(24, 1));
   }
 
   @DisplayName("Ловим некорректный ввод минут <0")
   @Test
-  public void negativeMinutes(){
+  public void negativeMinutes() {
     assertThrowsExactly(IllegalArgumentException.class, () -> new Timestamp(1, -1));
   }
 
   @DisplayName("Ловим некорректный ввод минут >59")
   @Test
-  public void incorrectMinutes(){
+  public void incorrectMinutes() {
     assertThrowsExactly(IllegalArgumentException.class, () -> new Timestamp(1, 60));
   }
 
@@ -40,4 +40,15 @@ public class TimestampTests {
     assertEquals(1, t1.getMinutes());
     assertEquals("01:01", t1.getTimeStamp());
   }
+
+  @DisplayName("Проверяем сеттер часов")
+  @Test
+  public void setHoursCheck() {
+    Timestamp t1 = new Timestamp(1, 1);
+    t1.setHours(5);
+    assertEquals(5, t1.getHours());
+    assertEquals("05:01", t1.getTimeStamp());
+  }
+
+
 }
