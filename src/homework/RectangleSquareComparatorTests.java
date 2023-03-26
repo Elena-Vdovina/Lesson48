@@ -80,4 +80,32 @@ public class RectangleSquareComparatorTests {
 
     assertEquals(expected, actual);
   }
+
+
+  // Эти варианты должен бы отсекать конструктор, но даже без этого сортировка не ломается
+  @DisplayName("Если одна из сторон 0")
+  @Test
+  public void sideZero() {
+    Rectangle r1 = new Rectangle(1, 0);
+    Rectangle r2 = new Rectangle(0, 1);
+
+    int result1 = comparator.compare(r1, r2);
+    int result2 = comparator.compare(r2, r1);
+
+    assertTrue(result1 > 0);
+    assertTrue(result2 < 0);
+  }
+
+  @DisplayName("Если одна из сторон <0")
+  @Test
+  public void sideNegative(){
+    Rectangle r1 = new Rectangle(1, -1);
+    Rectangle r2 = new Rectangle(-1, 1);
+
+    int result1 = comparator.compare(r1, r2);
+    int result2 = comparator.compare(r2, r1);
+
+    assertTrue(result1 > 0);
+    assertTrue(result2 < 0);
+  }
 }
