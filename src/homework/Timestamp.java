@@ -1,8 +1,5 @@
 package homework;
 
-import java.util.ArrayList;
-import java.util.List;
-
 // Создать класс Timestamp для хранения отметки времени (точки "часы:минуты").
 // У класса должны быть методы "добавить часы" и "добавить минуты", принимающий количество часов
 // (или минут) для добавления.
@@ -64,4 +61,17 @@ public class Timestamp {
     writeTime(this.hours, this.minutes);
   }
 
+  public void setMinutes(int minutes) {
+    checkMinutes(minutes);
+    this.minutes = this.minutes + minutes;
+    if (this.minutes == 60) {
+      this.minutes = 0;
+      this.hours = this.hours + 1;
+    }
+    if (this.minutes > 60) {
+      this.minutes = this.minutes - 60;
+      this.hours = this.hours + 1;
+    }
+    writeTime(this.hours, this.minutes);
+  }
 }
