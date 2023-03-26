@@ -31,7 +31,19 @@ public class Timestamp {
     if (hours < 0 || hours > 23) {
       throw new IllegalArgumentException("Некорректное значение часов " + hours);
     }
-    this.hours = hours;
+  }
+
+  private void writeTime(int hours, int minutes) {
+    if (hours < 10) {
+      this.timeStamp = "0" + this.hours + ":";
+    } else {
+      this.timeStamp = this.hours + ":";
+    }
+    if (minutes < 10) {
+      this.timeStamp += "0" + this.minutes;
+    } else {
+      this.timeStamp += this.minutes;
+    }
   }
 
   private void checkMinutes(int minutes) {
