@@ -50,8 +50,18 @@ public class Timestamp {
     if (minutes < 0 || minutes > 59) {
       throw new IllegalArgumentException("Некорректное значение минут " + minutes);
     }
-    this.minutes = minutes;
   }
 
+  public void setHours(int hours) {
+    checkHours(hours);
+    this.hours = this.hours + hours;
+    if (this.hours == 24) {
+      this.hours = 0;
+    }
+    if (this.hours > 24) {
+      this.hours = this.hours - 24;
+    }
+    writeTime(this.hours, this.minutes);
+  }
 
 }
