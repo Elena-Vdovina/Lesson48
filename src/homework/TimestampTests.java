@@ -59,4 +59,12 @@ public class TimestampTests {
     assertEquals("01:05", t1.getTimeStamp());
   }
 
+  @DisplayName("Проверяем добавление часов до суток")
+  @Test
+  public void addHoursCheck1() {
+    Timestamp t1 = new Timestamp(1, 1);
+    t1.addHours(5);
+    assertEquals(6, t1.getHours());
+    assertEquals("06:01", t1.getTimeStamp());
+  }
 }
