@@ -35,4 +35,17 @@ public class TimestampComparatorTests {
     assertTrue(result1 == 0);
     assertTrue(result2 == 0);
   }
+
+  @DisplayName("Сравниваем точки одного часа и разными минутами")
+  @Test
+  public void equalHoursDifferentMinutes() {
+    Timestamp t1 = new Timestamp(1, 2);
+    Timestamp t2 = new Timestamp(2, 1);
+
+    int result1 = comparator.compare(t1, t2);
+    int result2 = comparator.compare(t2, t1);
+
+    assertTrue(result1 < 0);
+    assertTrue(result2 > 0);
+  }
 }
