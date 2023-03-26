@@ -98,4 +98,9 @@ public class Timestamp {
     }
     writeTime(this.hours, this.minutes);
   }
+
+  @Override
+  public String toString(){
+    return timeStamp;
+  }
 }
