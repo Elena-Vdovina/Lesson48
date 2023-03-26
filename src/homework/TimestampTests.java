@@ -4,6 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import register.ReceiptLine;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrowsExactly;
 
 public class TimestampTests {
@@ -29,5 +30,14 @@ public class TimestampTests {
   @Test
   public void incorrectMinutes(){
     assertThrowsExactly(IllegalArgumentException.class, () -> new Timestamp(1, 60));
+  }
+
+  @DisplayName("Проверяем конструктор")
+  @Test
+  public void construct() {
+    Timestamp t1 = new Timestamp(1, 1);
+    assertEquals(1, t1.getHours());
+    assertEquals(1, t1.getMinutes());
+    assertEquals("01:01", t1.getTimeStamp());
   }
 }
