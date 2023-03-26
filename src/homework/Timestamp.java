@@ -73,6 +73,18 @@ public class Timestamp {
     writeTime(this.hours,this.minutes);
   }
 
+  public int getHours() {
+    return hours;
+  }
+
+  public int getMinutes() {
+    return minutes;
+  }
+
+  public String getTimeStamp() {
+    return timeStamp;
+  }
+
   public void addMinutes(int minutes) {
     checkMinutes(minutes);
     this.minutes = this.minutes + minutes;
