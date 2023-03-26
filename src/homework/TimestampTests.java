@@ -76,4 +76,13 @@ public class TimestampTests {
     assertEquals(0, t1.getHours());
     assertEquals("00:01", t1.getTimeStamp());
   }
+
+  @DisplayName("Проверяем добавление часов >24")
+  @Test
+  public void addHoursCheck3() {
+    Timestamp t1 = new Timestamp(14, 1);
+    t1.addHours(14);
+    assertEquals(4, t1.getHours());
+    assertEquals("04:01", t1.getTimeStamp());
+  }
 }
