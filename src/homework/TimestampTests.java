@@ -13,4 +13,10 @@ public class TimestampTests {
     assertThrowsExactly(IllegalArgumentException.class, () -> new Timestamp(-1, 1));
   }
 
+  @DisplayName("Ловим некорректный ввод часов >23")
+  @Test
+  public void incorrectHours(){
+    assertThrowsExactly(IllegalArgumentException.class, () -> new Timestamp(24, 1));
+  }
+
 }
