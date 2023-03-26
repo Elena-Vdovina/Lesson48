@@ -85,4 +85,13 @@ public class TimestampTests {
     assertEquals(4, t1.getHours());
     assertEquals("04:01", t1.getTimeStamp());
   }
+
+  @DisplayName("Проверяем добавление минут <60")
+  @Test
+  public void addMinutesCheck1() {
+    Timestamp t1 = new Timestamp(1, 1);
+    t1.addMinutes(5);
+    assertEquals(6, t1.getMinutes());
+    assertEquals("01:06", t1.getTimeStamp());
+  }
 }
