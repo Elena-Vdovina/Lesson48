@@ -49,7 +49,7 @@ public class Timestamp {
     }
   }
 
-  public void setHours(int hours) {
+  public void addHours(int hours) {
     checkHours(hours);
     this.hours = this.hours + hours;
     if (this.hours == 24) {
@@ -61,7 +61,7 @@ public class Timestamp {
     writeTime(this.hours, this.minutes);
   }
 
-  public void setMinutes(int minutes) {
+  public void addMinutes(int minutes) {
     checkMinutes(minutes);
     this.minutes = this.minutes + minutes;
     if (this.minutes == 60) {
