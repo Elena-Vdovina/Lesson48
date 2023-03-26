@@ -11,9 +11,9 @@ public class RectangleSquareComparator implements Comparator<Rectangle> {
 
   @Override
   public int compare(Rectangle r1, Rectangle r2) {
-    if(r1.getSquare() - r2.getSquare()!=0){
-      return r1.getSquare()-r2.getSquare();
+    if (r1.getSquare() - r2.getSquare() != 0) {
+      return r1.getSquare() - r2.getSquare();
     }
-    return r1.getLength()- r2.getLength();
+    return r1.getLength() - r2.getLength();
   }
 }
