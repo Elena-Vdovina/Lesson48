@@ -26,4 +26,9 @@ public class Rectangle {
   public int getSquare() {
     return square;
   }
+
+  @Override
+  public String toString() {
+    return "Rectangle square = " + square + ", length = " + length + ", width = " + width;
+  }
 }
