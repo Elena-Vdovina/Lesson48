@@ -50,5 +50,13 @@ public class TimestampTests {
     assertEquals("05:01", t1.getTimeStamp());
   }
 
+  @DisplayName("Проверяем сеттер минут")
+  @Test
+  public void setMinutesCheck() {
+    Timestamp t1 = new Timestamp(1, 1);
+    t1.setMinutes(5);
+    assertEquals(5, t1.getMinutes());
+    assertEquals("01:05", t1.getTimeStamp());
+  }
 
 }
