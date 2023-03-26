@@ -19,4 +19,9 @@ public class TimestampTests {
     assertThrowsExactly(IllegalArgumentException.class, () -> new Timestamp(24, 1));
   }
 
+  @DisplayName("Ловим некорректный ввод минут <0")
+  @Test
+  public void negativeMinutes(){
+    assertThrowsExactly(IllegalArgumentException.class, () -> new Timestamp(1, -1));
+  }
 }
