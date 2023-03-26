@@ -61,6 +61,18 @@ public class Timestamp {
     writeTime(this.hours, this.minutes);
   }
 
+  public void setHours(int hours) {
+    checkHours(hours);
+    this.hours = hours;
+    writeTime(this.hours, this.minutes);
+  }
+
+  public void setMinutes(int minutes) {
+    checkMinutes(minutes);
+    this.minutes = minutes;
+    writeTime(this.hours,this.minutes);
+  }
+
   public void addMinutes(int minutes) {
     checkMinutes(minutes);
     this.minutes = this.minutes + minutes;
