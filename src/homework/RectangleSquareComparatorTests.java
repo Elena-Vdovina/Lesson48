@@ -26,4 +26,18 @@ public class RectangleSquareComparatorTests {
     assertTrue(result1 < 0);
     assertTrue(result2 > 0);
   }
+
+  @DisplayName("Сравниваем равные прямоугольники")
+  @Test
+  public void equalRectangle() {
+    Rectangle r1 = new Rectangle(1, 1);
+    Rectangle r2 = new Rectangle(1, 1);
+
+    int result1 = comparator.compare(r1, r2);
+    int result2 = comparator.compare(r2, r1);
+
+    assertTrue(result1 == 0);
+    assertTrue(result2 == 0);
+  }
+
 }
